@@ -1,0 +1,2 @@
+open location "http://www.vertikal.net"
+delay 1.888769
