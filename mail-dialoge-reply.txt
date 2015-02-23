@@ -1,10 +1,13 @@
 display dialog "Check Your Mail Foo" buttons {"mail", "cancel"} default button 2
 if the button returned of the result is "mail" then
 	tell application "mail" to launch
-	delay 10
+	delay 3
 	tell application "mail"
 		check for new mail
-	end tell
+tell application "mail"
+activate
+end tell
+end tell
 else
 	say "cancel"
 end if
