@@ -1,0 +1,9 @@
+set loc to posix file "/users/a1/documents"
+set now to current date
+set theYear to (year of now) as text
+set theMonth to text -2 thru -1 of ("00" & ((month of now as number) as text))
+set theDay to text -2 thru -1 of ("00" & day of now as text)
+set folderName to theMonth & theDay & theYear
+tell application "finder"
+set newfo to make new folder at loc with properties {name:folderName}
+end tell
