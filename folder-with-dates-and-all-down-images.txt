@@ -1,0 +1,17 @@
+set now to current date
+set theYear to (year of now) as text
+set theMonth to text -2 thru -1 of ("00" & ((month of now as number) as text))
+set theDay to text -2 thru -1 of ("00" & day of now as text)
+set folderName to theMonth & theDay & theYear
+set filetype to "jpg"
+set filetype2 to "png"
+set filetype3 to "jpeg"
+set newfolder to ((path to documents folder as text) & folderName as text)
+tell application "Finder"
+if not (exists folder ((path to documents folder as text) & folderName as text)) then
+make new folder at (path to documents folder) with properties {name:folderName}
+end if
+move (every file of folder (path to downloads folder) whose name extension is filetype) to folder newfolder
+move (every file of folder (path to downloads folder) whose name extension is filetype2) to folder newfolder
+move (every file of folder (path to downloads folder) whose name extension is filetype3) to folder newfolder
+end tell
